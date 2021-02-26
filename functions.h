@@ -31,7 +31,6 @@ uint128 lcm(uint64, uint64);
 
 // Non iterative implementation of the Extended Euclidean Algorithm.
 // x * a + y * b = d
-// The current implementation is potentially unsafe!
 void eea(int128 a, int128 b, int128 *x, int128 *y, int128 *d);
 
 // Carmichael's totient function with the special case

@@ -1,12 +1,12 @@
-// This program implements the RSA algorithm and supports up to 64bit
-// unsigned integers. To guarantee this, it must use the __int128 type,
-// which is not part of the C standard and is ONLY available for x64
-// systems and select compilers. Its range can be expanded by using
+// This program implements the RSA algorithm and supports unsigned
+// integers up to 64 bits. To guarantee this, it must use the __int128
+// type, which is not part of the C standard and is ONLY available for
+// x64 systems and select compilers. Its range can be expanded by using
 // and arbitrary precision arithmetic library such as GMP.
 
-// NOTE! This program is unsafe in the programmatic sense such as
-// potential overflows or memory leaks and the likes, but also
-// in a cryptographic sense: small numbers, timing attacks, ...
+// NOTE! This program is unsafe in both the programmatic sense such as
+// potential overflows or memory leaks and the likes, but also in the
+// cryptographic sense: small numbers, timing attacks, ...
 
 // I would love it if you'd let me know in case you fix/improve
 // this program so that I can learn more as well! - github.com/takakv

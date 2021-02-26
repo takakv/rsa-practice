@@ -53,7 +53,7 @@ uint64 mod_pow(const uint64 base, uint128 exponent, uint128 modulus) {
 }
 
 // Non recursive implementation, as from experience,
-// C programs frown upon recursive functions.
+// C programmers frown upon recursive functions.
 uint64 gcd(uint64 a, uint64 b) {
     while (b != 0) {
         uint64 tmp = a;
@@ -70,6 +70,7 @@ uint128 lcm(uint64 a, uint64 b) {
 
 // 2.107 Algorithm: Extended Euclidean algorithm
 // "Handbook of Applied Cryptography" by Alfred J. Menezes et al page 67.
+// The current implementation is potentially unsafe!
 void eea(int128 a, int128 b, int128 *x, int128 *y, int128 *d) {
     if (b == 0) {
         *d = a, *x = 1, *y = 0;
@@ -80,8 +81,7 @@ void eea(int128 a, int128 b, int128 *x, int128 *y, int128 *d) {
         // NB! Floored division.
         int128 q = a / b, r = a - q * b;
         *x = x2 - q * x1, *y = y2 - q * y1;
-        a = b;
-        b = r;
+        a = b, b = r;
         x2 = x1, x1 = *x, y2 = y1, y1 = *y;
     }
     *d = a, *x = x2, *y = y2;
@@ -95,7 +95,7 @@ uint128 pxp_lambda(uint64 prime1, uint64 prime2) {
 
 // This implementation doesn't generate e randomly and picks a fixed
 // one (prime) depending on the totient size.
-// This is not generally an issue, and in done often in practise.
+// This is not generally an issue, and is done often in practise.
 uint64 get_ee(uint128 totient) {
     int possible_ees[] = {65537, 51239, 21803, 12517, 4691, 997, 101, 13, 5, 3};
     int ee_count = sizeof(possible_ees) / sizeof(int);
