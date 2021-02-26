@@ -3,4 +3,4 @@ project(rsa C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(rsa main.c)
+add_executable(rsa main.c functions.c functions.h)
