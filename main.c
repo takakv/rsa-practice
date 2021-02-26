@@ -14,7 +14,8 @@
 #include <stdio.h>
 #include "functions.h"
 
-int main() {
+int main()
+{
     uint64 prime1, prime2;
 
     prime1 = 101;
@@ -25,7 +26,8 @@ int main() {
 
     bool is_prime = check_prime(prime1);
     if (is_prime) is_prime = check_prime(prime2);
-    if (!is_prime) {
+    if (!is_prime)
+    {
         printf("One of the numbers is not prime!");
         return 1;
     }
@@ -38,10 +40,13 @@ int main() {
     eea(enc_exp, totient, &dec_exp, &trash1, &trash2);
     while (dec_exp < 0) dec_exp += totient;
 
-    if (modulus <= UINT64_MAX) {
+    if (modulus <= UINT64_MAX)
+    {
         printf("The public key is: (%lli, %lli).",
                (ull) modulus, (ull) enc_exp);
-    } else {
+    }
+    else
+    {
         printf("The public key is too large to display ");
         printf("using standard functions. As a challenge, ");
         printf("try to write a function to print 128bit numbers.");
@@ -49,10 +54,13 @@ int main() {
 
     printf("\n");
 
-    if (dec_exp <= INT64_MAX) {
+    if (dec_exp <= INT64_MAX)
+    {
         printf("The private key is: %lli. Don't share it with anyone!",
                (ull) dec_exp);
-    } else {
+    }
+    else
+    {
         printf("The private key is too large to display ");
         printf("using standard functions. As a challenge, ");
         printf("try to write a function to print 128bit numbers.");
