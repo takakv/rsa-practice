@@ -4,9 +4,9 @@
 // systems and select compilers. Its range can be expanded by using
 // and arbitrary precision arithmetic library such as GMP.
 
-// NOTE! This program is unsafe in the programmatic sense
-// (memory leaks, overflows, ..), but also cryptographic sense
-// (small numbers, vulnerable to timing attacks, ...).
+// NOTE! This program is unsafe in the programmatic sense such as
+// potential overflows or memory leaks and the likes, but also
+// in a cryptographic sense: small numbers, timing attacks, ...
 
 // I would love it if you'd let me know in case you fix/improve
 // this program so that I can learn more as well! - github.com/takakv
